@@ -33,6 +33,8 @@
 </nav>
 
 <h1>{{pageName}}</h1>
-<div class="alert" [ngClass]="alertClass" *ngIf="alertMessage">{{alertMessage}}</div>
+<div class="alert"  *ngIf="alert" [ngClass]="alert.alertClass">{{alert.alertMessage}} 
+  <a *ngIf="alert.alertLink" class="alert-link" [href]="alert.alertLink">{{alert.alertLinkText}}</a>     
+</div>
 <router-outlet>
 </router-outlet>

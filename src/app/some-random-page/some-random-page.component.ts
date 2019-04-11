@@ -16,6 +16,8 @@ export class SomeRandomPageComponent implements OnInit {
     this.alertSvc.createAlert({
       alertClass: 'alert-success',
       alertMessage: 'Wow this is cool stuff!!!',
+      alertLink: "",
+      alertLinkText: ""
     });
   }
 }

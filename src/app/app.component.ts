@@ -14,8 +14,7 @@ import { AlertDetails } from '@models/alertDetails';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  alertClass: string;
-  alertMessage: string;
+  alert: AlertDetails;
   username: string;
   fullname: string;
   pageName: string;  
@@ -52,8 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if (info == null) {
       this.clearAlertContent();
     } else {
-      this.alertClass = info.alertClass;
-      this.alertMessage = info.alertMessage;
+      this.alert = info;      
     }
   }
 
@@ -69,8 +67,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   clearAlertContent() {
-    this.alertClass = null;
-    this.alertMessage = null;
+    this.alert = null;    
   }
 
   ngOnDestroy() {

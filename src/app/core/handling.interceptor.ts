@@ -14,10 +14,21 @@ export class HandlingInterceptor implements HttpInterceptor {
   }
 
   handleError(e: any, req: HttpRequest<any>) {
+    let alertLink = "";
+    let alertLinkText = "";
     if (!environment.production) {
-      console.log(`Error doing ${req.method} on ${req.urlWithParams}!!!`);     
-    }
+      if (e !== null && e.error !== null && e.error.Links) {
+        alertLink = e.error.Links;
+        alertLinkText = "View Error Logs";
+      }      
+    }    
 
-    this.alert.createAlert({alertClass: 'alert-error', alertMessage: 'An error occurred during an API call!'});
+    this.alert.createAlert(
+      {
+        alertClass: 'alert-error', 
+        alertMessage: 'An error occurred during an API call! (' + e.error.Id + ')', 
+        alertLink: alertLink, 
+        alertLinkText: alertLinkText
+      });
   }
 }
