@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   loginAuthority: 'https://demo.identityserver.io/',
-  backendApiRoot: 'https://www-dev2.realpage.com/api',  
+  backendApiRoot: 'https://localhost:44397/api',  
 };
 
 /*

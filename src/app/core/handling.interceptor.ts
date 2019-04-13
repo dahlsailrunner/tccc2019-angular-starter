@@ -23,10 +23,14 @@ export class HandlingInterceptor implements HttpInterceptor {
       }      
     }    
 
+    let errorMessage = 'An error occurred during an API call!';
+    if (e.error.Id) {
+      errorMessage = errorMessage + ' (' + e.error.Id +')';
+    }
     this.alert.createAlert(
       {
-        alertClass: 'alert-error', 
-        alertMessage: 'An error occurred during an API call! (' + e.error.Id + ')', 
+        alertClass: 'alert-danger', 
+        alertMessage: errorMessage, 
         alertLink: alertLink, 
         alertLinkText: alertLinkText
       });

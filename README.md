@@ -2,7 +2,7 @@
 This starter project has the following features:
 
 - Built using Angular 7 (see below for standard Angular info)
-- Includes Bootstrap and its dependencies via CDN, plus the **Superhero** theme from https://bootswatch.com
+- Includes Bootstrap and its dependencies via CDN, plus the **Cerulean** theme from https://bootswatch.com
 - Includes OIDC authentication via a demo isntance of IdentityServer4 at https://demo.identityserver.io 
 - Demonstrates "deep linking" -- i.e. go to ``/some-random-page`` as your first target and you will end up there after logging in.  Otherwise you end up at ``/home``.
 - Sets page title as new components loaded

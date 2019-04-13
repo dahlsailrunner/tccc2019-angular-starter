@@ -2,6 +2,36 @@
   The results of an authenticated API call are in the alert that follows:
 </p>
 
-<p class="alert alert-info">
-  {{apiResults}}
-</p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card ">
+      <div class="card-header text-white bg-warning mb-3">
+        Parameter-less API call
+      </div>
+      <div class="card-body">            
+        <p class="card-text">This call will simply be a GET with no parameters</p>
+        <button (click)="callValuesApi()" class="btn btn-primary">Hit it!</button>
+      </div>           
+      <div class="card-footer">
+          {{parameterlessResults}}
+      </div>
+    </div> 
+  </div>     
+  <div class="col-sm-6">
+      <div class="card">
+        <div class="card-header text-white bg-warning mb-3">
+          API call with Parameter
+        </div>
+        <div class="card-body">            
+          <p class="card-text">This call will simply be a GET the ID value</p>
+          <span>Enter a numeric ID value: </span>
+          <input [(ngModel)]="idParameter"/>
+          <button style="margin-left: 10px;" (click)="callValuesApiWithParam()" class="btn btn-primary">Hit it!</button>
+        </div>           
+        <div class="card-footer">
+            {{resultFromParam}}
+        </div>
+      </div> 
+    </div>        
+  
+</div>
