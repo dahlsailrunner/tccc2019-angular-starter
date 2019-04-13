@@ -68,7 +68,7 @@ The `src/shared/handling.interceptor.ts` grabs the response from an API call and
 It additionally triggers a UI alert which is the red box you see on the page using the Alert Service described further below.
 
 # Environments / Configuration
-Any environment-specific configuration values should be contained in the appropriately-named environment.ts file in the `src/environments` folder.  API base addresses, the Unified Login URL, and other such info would go into these files.
+Any environment-specific configuration values should be contained in the appropriately-named environment.ts file in the `src/environments` folder.  API base addresses, the OIDC provider URL, and other such info would go into these files.
 
 To add an environment, start by adding a new `environment.<newenvironment>.ts` file into the `src/environments` folder.  Copy the settings from `environment.ts` 
 and make the appropriate updates.
@@ -100,17 +100,21 @@ Then within `ngOnInit` just set the page title as follows:
     this.newPgSvc.setNewPage("Whatever You Want in the Page Header");
 
 # Alerts
-A general global alert capability is included.  This can show an alert to the user in the various format allowed within RAUL / Bootstrap.
+A general global alert capability is included.  This can show an alert to the user in the various formats allowed within Bootstrap.
 
 To set one, inject the `AlertService` into wherever you want to set it from, and then call the `createAlert` method like the example below:
 
-    this.alertSvc.createAlert({alertClass: "alert-error", alertMessage: "An error occurred during an API call!"});
+    this.alertSvc.createAlert({alertClass: "alert-danger", alertMessage: "An error occurred during an API call!"});
 
 The valid values for the `alertClass` are:
+- `alert-primary`
+- `alert-secondary`
 - `alert-info`
 - `alert-warning`
 - `alert-success`
-- `alert-error`
+- `alert-danger`
+- `alert-light`
+- `alert-dark`
 
 # Building and Running
 Building is done with the `ng build` command.  To build for specific environments, use `ng build --configuration <configname>`.
